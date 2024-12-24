@@ -1,0 +1,29 @@
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+body {
+  font-family: OpenSans, sans-serif;
+}
+
+@layer base {
+  :root {
+    --color-primary: 222, 45%, 94%;
+    --color-secondary: 245, 100%, 99%;
+    --color-accent: 268, 47%, 43%;
+    --color-surface: 0, 100%, 97%;
+    --color-dark: 0, 1%, 12%;
+
+    --shadow-primary: 256, 43%, 41%, 0.25;
+    --gradient-primary: 165.54deg, #141333 -33.39%, #202261 15.89%, #543c97 55.84%, #6939a2 74.96%;
+
+    --radius: 0.5rem;
+
+    --color-button-background-primary: var(--color-primary);
+    --color-button-background-secondary: var(--color-secondary);
+    --color-text-foreground-light: var(--color-secondary);
+    --color-text-foreground-dark: var(--color-dark);
+    --color-text-accent: var(--color-accent);
+    --color-background: var(--color-surface);
+  }
+}

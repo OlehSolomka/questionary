@@ -1,0 +1,464 @@
+{
+  "theme": {
+    "backgroundColour": "#fff"
+  },
+  "questionaree": {
+    "question_inc": 14,
+    "options_inc": 51,
+    "questions": [
+      {
+        "id": "question_1",
+        "root": true,
+        "description": "Select your gender:",
+        "sub_description": null,
+        "dynamic_values": null,
+        "info_break": null,
+        "screen_type": "single_choice_text",
+        "options": [
+          {
+            "description": "Female",
+            "id": "option_1",
+            "next": "question_2"
+          },
+          {
+            "description": "Male",
+            "id": "option_2",
+            "next": "question_2"
+          }
+        ]
+      },
+      {
+        "id": "question_2",
+        "root": false,
+        "description": "So we can get to know you better, tell us about your relationship status.",
+        "sub_description": null,
+        "dynamic_values": null,
+        "info_break": null,
+        "screen_type": "single_choice_text",
+        "options": [
+          {
+            "description": "Single",
+            "id": "option_3",
+            "next": "question_3"
+          },
+          {
+            "description": "In a relationship",
+            "id": "option_4",
+            "next": "question_4"
+          }
+        ]
+      },
+      {
+        "id": "question_3",
+        "root": false,
+        "description": "Are you a single parent?",
+        "sub_description": null,
+        "dynamic_values": null,
+        "info_break": null,
+        "screen_type": "single_choice_text",
+        "options": [
+          {
+            "description": "Yes",
+            "id": "option_5",
+            "next": "question_5"
+          },
+          {
+            "description": "No",
+            "id": "option_6",
+            "next": "question_5"
+          }
+        ]
+      },
+      {
+        "id": "question_4",
+        "root": false,
+        "description": "Are you a parent?",
+        "sub_description": null,
+        "dynamic_values": null,
+        "info_break": null,
+        "screen_type": "single_choice_text",
+        "options": [
+          {
+            "id": "option_7",
+            "description": "Yes",
+            "next": "question_6"
+          },
+          {
+            "id": "option_8",
+            "description": "No",
+            "next": "question_6"
+          }
+        ]
+      },
+      {
+        "id": "question_5",
+        "root": false,
+        "description": "{{Gender}} {{Has_Children}}need a slightly different approach to improve their relationship. Which statement best describes you?",
+        "sub_description": null,
+        "dynamic_values": {
+          "{{Gender}}": {
+            "question_id": "question_1",
+            "match_option": true
+          },
+          "{{Has_Children}}": {
+            "question_id": "question_4",
+            "match_option": false,
+            "insert_value": {
+              "option_7": "who have children ",
+              "option_8": ""
+            }
+          }
+        },
+        "info_break": null,
+        "screen_type": "single_choice_text",
+        "options": [
+          {
+            "description": "I’m very unhappy with how things are going in my relationship",
+            "id": "option_9",
+            "next": "question_12"
+          },
+          {
+            "description": "I’m unhappy with parts of my relationship, but some things are working well",
+            "id": "option_10",
+            "next": "question_12"
+          },
+          {
+            "description": "I’m generally happy in my relationship",
+            "id": "option_11",
+            "next": "question_12"
+          }
+        ]
+      },
+      {
+        "id": "question_6",
+        "root": false,
+        "description": "Single {{Gender}} {{Children}}need a slightly different approach to find their perfect partner. But first, how did you feel in your last relationship?",
+        "sub_description": null,
+        "dynamic_values": {
+          "{{Gender}}": {
+            "question_id": "question_1",
+            "match_option": true
+          },
+          "{{Has_Children}}": {
+            "question_id": "question_4",
+            "match_option": false,
+            "insert_value": {
+              "option_7": "who have children ",
+              "option_8": ""
+            }
+          }
+        },
+        "info_break": null,
+        "screen_type": "single_choice_text",
+        "options": [
+          {
+            "description": "I was unhappy with low things were going in my relationship",
+            "id": "option_12",
+            "next": "question_7"
+          },
+          {
+            "description": "I was unhappy with parts of my relationship, but some thing were working",
+            "id": "option_13",
+            "next": "question_7"
+          },
+          {
+            "description": "I was generally happy with my relationship",
+            "id": "option_14",
+            "next": "question_7"
+          },
+          {
+            "description": "I’ve never been in a relationship",
+            "id": "option_15",
+            "next": "question_7"
+          }
+        ]
+      },
+      {
+        "id": "question_7",
+        "root": false,
+        "description": "Is your partner an introvert or extrovert?",
+        "sub_description": null,
+        "dynamic_values": null,
+        "info_break": null,
+        "screen_type": "single_choice_text",
+        "options": [
+          {
+            "description": "Introvert",
+            "id": "option_16",
+            "next": "question_8"
+          },
+          {
+            "description": "Extrovert",
+            "id": "option_17",
+            "next": "question_8"
+          },
+          {
+            "description": "A bit of both",
+            "id": "option_18",
+            "next": "question_8"
+          }
+        ]
+      },
+      {
+        "id": "question_8",
+        "root": false,
+        "description": "What is your partner’s gender?",
+        "sub_description": null,
+        "dynamic_values": null,
+        "info_break": null,
+        "screen_type": "single_choice_text",
+        "options": [
+          {
+            "description": "Male",
+            "id": "option_19",
+            "next": "question_9"
+          },
+          {
+            "description": "Female",
+            "id": "option_20",
+            "next": "question_9"
+          }
+        ]
+      },
+      {
+        "id": "question_9",
+        "root": false,
+        "description": "Do you agree with the statement below?",
+        "sub_description": "“My partner and I make sex a priority in our relationship”",
+        "dynamic_values": null,
+        "info_break": null,
+        "screen_type": "single_choice_text",
+        "options": [
+          {
+            "description": "Strongly agree",
+            "id": "option_21",
+            "next": "question_10"
+          },
+          {
+            "description": "Agree",
+            "id": "option_22",
+            "next": "question_10"
+          },
+          {
+            "description": "Neutral",
+            "id": "option_23",
+            "next": "question_10"
+          },
+          {
+            "description": "Disagree",
+            "id": "option_24",
+            "next": "question_10"
+          },
+          {
+            "description": "Strongly disagree",
+            "id": "option_25",
+            "next": "question_10"
+          }
+        ]
+      },
+      {
+        "id": "question_10",
+        "root": false,
+        "description": "When you think about your relationship goals, you feel...?",
+        "sub_description": null,
+        "dynamic_values": null,
+        "info_break": null,
+        "screen_type": "single_choice_text",
+        "options": [
+          {
+            "description": "Optimistic! They are totally doable, with some guidance.",
+            "id": "option_26",
+            "next": "question_11"
+          },
+          {
+            "description": "Cautious. I’ve struggled before, but I’m hopeful.",
+            "id": "option_27",
+            "next": "question_11"
+          },
+          {
+            "description": "I’m feeling a little anxious, honestly.",
+            "id": "option_28",
+            "next": "question_11"
+          }
+        ]
+      },
+      {
+        "id": "question_11",
+        "root": false,
+        "description": "Where did you hear about us?",
+        "sub_description": null,
+        "dynamic_values": null,
+        "info_break": null,
+        "screen_type": "single_choice_text",
+        "options": [
+          {
+            "description": "Poster or Billboard",
+            "id": "option_26",
+            "next": null
+          },
+          {
+            "description": "Friend or Family",
+            "id": "option_27",
+            "next": null
+          },
+          {
+            "description": "Instagram",
+            "id": "option_28",
+            "next": null
+          },
+          {
+            "description": "Direct Mail or Package Insert",
+            "id": "option_29",
+            "next": null
+          },
+          {
+            "description": "Online TV or Streaming TV",
+            "id": "option_30",
+            "next": null
+          },
+          {
+            "description": "TV",
+            "id": "option_31",
+            "next": null
+          },
+          {
+            "description": "Radio",
+            "id": "option_32",
+            "next": null
+          },
+          {
+            "description": "Search Engine (Google, Bing, etc.)",
+            "id": "option_33",
+            "next": null
+          },
+          {
+            "description": "Newspaper or Magazine",
+            "id": "option_34",
+            "next": null
+          },
+          {
+            "description": "Facebook",
+            "id": "option_35",
+            "next": null
+          },
+          {
+            "description": "Blog Post or Website Review",
+            "id": "option_36",
+            "next": null
+          },
+          {
+            "description": "Podcast",
+            "id": "option_37",
+            "next": null
+          },
+          {
+            "description": "Influencer",
+            "id": "option_38",
+            "next": null
+          },
+          {
+            "description": "Youtube",
+            "id": "option_39",
+            "next": null
+          },
+          {
+            "description": "Pinterest",
+            "id": "option_40",
+            "next": null
+          },
+          {
+            "description": "Other",
+            "id": "option_41",
+            "next": null
+          }
+        ]
+      },
+      {
+        "id": "question_12",
+        "root": false,
+        "description": "Do you tend to overthink?",
+        "sub_description": null,
+        "dynamic_values": null,
+        "info_break": {
+          "title": "So how does it work?",
+          "description": "We analyze hundreds of data points to create your unique astrological blueprint. This is combined with AI to tailor-make your astrological insights, based on your answers. We’re going to change your relationship with astrology."
+        },
+        "screen_type": "single_choice_text",
+        "options": [
+          {
+            "description": "Yes",
+            "id": "option_42",
+            "next": "question_13"
+          },
+          {
+            "description": "No",
+            "id": "option_43",
+            "next": "question_14"
+          }
+        ]
+      },
+      {
+        "id": "question_13",
+        "root": false,
+        "description": "What is most important to you?",
+        "sub_description": null,
+        "dynamic_values": null,
+        "info_break": null,
+        "screen_type": "single_choice_text",
+        "options": [
+          {
+            "description": "Success",
+            "id": "option_44",
+            "next": "question_11"
+          },
+          {
+            "description": "Romance",
+            "id": "option_45",
+            "next": "question_11"
+          },
+          {
+            "description": "Stability",
+            "id": "option_46",
+            "next": "question_11"
+          },
+          {
+            "description": "Freedom",
+            "id": "option_47",
+            "next": "question_11"
+          }
+        ]
+      },
+      {
+        "id": "question_14",
+        "root": false,
+        "description": "Is emotional control tricky for you?",
+        "sub_description": null,
+        "dynamic_values": null,
+        "info_break": null,
+        "screen_type": "single_choice_text",
+        "options": [
+          {
+            "description": "Yes",
+            "id": "option_48",
+            "next": "question_11"
+          },
+          {
+            "description": "Sometimes",
+            "id": "option_49",
+            "next": "question_11"
+          },
+          {
+            "description": "Rarely",
+            "id": "option_50",
+            "next": "question_11"
+          },
+          {
+            "description": "Not at all",
+            "id": "option_51",
+            "next": "question_11"
+          }
+        ]
+      }
+    ]
+  }
+}
