@@ -1,6 +1,5 @@
-import React from 'react';
-import { BackButton } from './BackButton';
 import Image from 'next/image';
+import { HeaderBackButton } from './HeaderBackButton';
 
 interface HeaderProps {
   onClick?: () => void;
@@ -27,7 +26,7 @@ export const PageHeader = ({ variant = 'default' }: HeaderProps) => {
 
   return (
     <div className="mx-auto flex h-[44] max-w-[1200px] items-center justify-between px-[15px] sm:h-[54px] sm:px-0">
-      <BackButton imageScr={imageScr} />
+      <HeaderBackButton imageScr={imageScr} />
       <Image src={logoSrc} alt="main logo" width={24} height={24} className="mx-auto" />
     </div>
   );

@@ -1,12 +1,11 @@
 import { PageHeader } from '@/components';
 import { PageContainer } from '@/components';
-import React from 'react';
 
-const QuestionLayout = ({ children }: { children: React.ReactNode }) => {
+const QuestionLayout = async ({ children }: { children: React.ReactNode }) => {
   return (
-    <div className="bg-primary-background h-screen">
+    <div className="min-h-screen bg-primary-background">
       <PageHeader />
-      <PageContainer className="mt-5">{children}</PageContainer>
+      <PageContainer className="mt-5 pb-8">{children}</PageContainer>
     </div>
   );
 };

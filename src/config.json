@@ -1,8 +1,14 @@
 {
   "theme": {
-    "backgroundColour": "#fff"
+    "variables": {
+      "--color-primary": "222, 45%, 94%",
+      "--color-secondary": "222, 45%, 94%",
+      "--color-accent": "222, 45%, 94%",
+      "--color-surface": "222, 45%, 94%",
+      "--color-dark": "222, 45%, 94%"
+    }
   },
-  "questionaree": {
+  "questionnaire": {
     "question_inc": 14,
     "options_inc": 51,
     "questions": [
@@ -10,7 +16,8 @@
         "id": "question_1",
         "root": true,
         "description": "Select your gender:",
-        "sub_description": null,
+        "description_short": "Gender",
+        "helper_text": null,
         "dynamic_values": null,
         "info_break": null,
         "screen_type": "single_choice_text",
@@ -31,7 +38,8 @@
         "id": "question_2",
         "root": false,
         "description": "So we can get to know you better, tell us about your relationship status.",
-        "sub_description": null,
+        "description_short": "Relationship status",
+        "helper_text": null,
         "dynamic_values": null,
         "info_break": null,
         "screen_type": "single_choice_text",
@@ -52,7 +60,8 @@
         "id": "question_3",
         "root": false,
         "description": "Are you a single parent?",
-        "sub_description": null,
+        "description_short": "Single parent",
+        "helper_text": null,
         "dynamic_values": null,
         "info_break": null,
         "screen_type": "single_choice_text",
@@ -73,7 +82,8 @@
         "id": "question_4",
         "root": false,
         "description": "Are you a parent?",
-        "sub_description": null,
+        "description_short": "Parent",
+        "helper_text": null,
         "dynamic_values": null,
         "info_break": null,
         "screen_type": "single_choice_text",
@@ -94,18 +104,23 @@
         "id": "question_5",
         "root": false,
         "description": "{{Gender}} {{Has_Children}}need a slightly different approach to improve their relationship. Which statement best describes you?",
-        "sub_description": null,
+        "description_short": "How do you feel in relationship",
+        "helper_text": null,
         "dynamic_values": {
-          "{{Gender}}": {
+          "Gender": {
             "question_id": "question_1",
-            "match_option": true
+            "match_option": true,
+            "insert_value": {
+              "default": "Gender"
+            }
           },
-          "{{Has_Children}}": {
+          "Has_Children": {
             "question_id": "question_4",
             "match_option": false,
             "insert_value": {
               "option_7": "who have children ",
-              "option_8": ""
+              "option_8": "",
+              "default": ""
             }
           }
         },
@@ -132,19 +147,24 @@
       {
         "id": "question_6",
         "root": false,
-        "description": "Single {{Gender}} {{Children}}need a slightly different approach to find their perfect partner. But first, how did you feel in your last relationship?",
-        "sub_description": null,
+        "description": "Single {{Gender}} {{Has_Children}}need a slightly different approach to find their perfect partner. But first, how did you feel in your last relationship?",
+        "description_short": "Last relationship",
+        "helper_text": null,
         "dynamic_values": {
-          "{{Gender}}": {
+          "Gender": {
             "question_id": "question_1",
-            "match_option": true
+            "match_option": true,
+            "insert_value": {
+              "default": "Gender"
+            }
           },
-          "{{Has_Children}}": {
+          "Has_Children": {
             "question_id": "question_4",
             "match_option": false,
             "insert_value": {
               "option_7": "who have children ",
-              "option_8": ""
+              "option_8": "",
+              "default": ""
             }
           }
         },
@@ -152,7 +172,7 @@
         "screen_type": "single_choice_text",
         "options": [
           {
-            "description": "I was unhappy with low things were going in my relationship",
+            "description": "I was unhappy with how things were going in my relationship",
             "id": "option_12",
             "next": "question_7"
           },
@@ -177,7 +197,8 @@
         "id": "question_7",
         "root": false,
         "description": "Is your partner an introvert or extrovert?",
-        "sub_description": null,
+        "description_short": "Partner's personality",
+        "helper_text": null,
         "dynamic_values": null,
         "info_break": null,
         "screen_type": "single_choice_text",
@@ -203,7 +224,8 @@
         "id": "question_8",
         "root": false,
         "description": "What is your partner’s gender?",
-        "sub_description": null,
+        "description_short": "Partner's gender",
+        "helper_text": null,
         "dynamic_values": null,
         "info_break": null,
         "screen_type": "single_choice_text",
@@ -224,7 +246,8 @@
         "id": "question_9",
         "root": false,
         "description": "Do you agree with the statement below?",
-        "sub_description": "“My partner and I make sex a priority in our relationship”",
+        "description_short": "Sex as a priority in relationship",
+        "helper_text": "“My partner and I make sex a priority in our relationship”",
         "dynamic_values": null,
         "info_break": null,
         "screen_type": "single_choice_text",
@@ -260,7 +283,8 @@
         "id": "question_10",
         "root": false,
         "description": "When you think about your relationship goals, you feel...?",
-        "sub_description": null,
+        "description_short": "Thoughts about relationship goals",
+        "helper_text": null,
         "dynamic_values": null,
         "info_break": null,
         "screen_type": "single_choice_text",
@@ -286,7 +310,8 @@
         "id": "question_11",
         "root": false,
         "description": "Where did you hear about us?",
-        "sub_description": null,
+        "description_short": "Where did you hear about us?",
+        "helper_text": null,
         "dynamic_values": null,
         "info_break": null,
         "screen_type": "single_choice_text",
@@ -377,7 +402,8 @@
         "id": "question_12",
         "root": false,
         "description": "Do you tend to overthink?",
-        "sub_description": null,
+        "description_short": "Tend to overthink",
+        "helper_text": null,
         "dynamic_values": null,
         "info_break": {
           "title": "So how does it work?",
@@ -401,7 +427,8 @@
         "id": "question_13",
         "root": false,
         "description": "What is most important to you?",
-        "sub_description": null,
+        "description_short": "Most important thing",
+        "helper_text": null,
         "dynamic_values": null,
         "info_break": null,
         "screen_type": "single_choice_text",
@@ -432,7 +459,8 @@
         "id": "question_14",
         "root": false,
         "description": "Is emotional control tricky for you?",
-        "sub_description": null,
+        "description_short": "Emotional controll problems",
+        "helper_text": null,
         "dynamic_values": null,
         "info_break": null,
         "screen_type": "single_choice_text",

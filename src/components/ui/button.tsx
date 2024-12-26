@@ -5,20 +5,20 @@ import { cva, type VariantProps } from 'class-variance-authority';
 import { cn } from '@/lib/utils';
 
 const buttonVariants = cva(
-  'focus-visible:ring-ring inline-flex items-center justify-center gap-2 whitespace-nowrap rounded-md text-sm font-medium focus-visible:outline-none focus-visible:ring-1 disabled:pointer-events-none disabled:opacity-50 [&_svg]:pointer-events-none [&_svg]:size-4 [&_svg]:shrink-0',
+  'focus-visible:ring-ring inline-flex items-center justify-center gap-2 whitespace-normal whitespace-nowrap rounded-md text-sm font-medium focus-visible:outline-none focus-visible:ring-1 disabled:pointer-events-none disabled:opacity-50 [&_svg]:pointer-events-none [&_svg]:size-4 [&_svg]:shrink-0',
   {
     variants: {
       variant: {
         primary:
-          'text-primary-foreground active:text-secondary-foreground bg-primary-button shadow-button hover:bg-primary-button/70 active:bg-gradient-primary',
+          'bg-primary-button text-primary-foreground shadow-button hover:bg-primary-button/70 active:bg-gradient-primary active:text-secondary-foreground',
         secondary:
-          'text-secondary-foreground bg-secondary-button text-accent-text shadow-button hover:bg-secondary-button/80',
+          'bg-secondary-button text-accent-foreground shadow-button hover:bg-secondary-button/80',
         ghost: '',
       },
       size: {
-        default: 'h-[64px] px-[16px] py-[12px]',
-        sm: 'h-8 rounded-md px-3 text-xs',
-        lg: 'h-10 rounded-md px-8',
+        default: 'h-[64px] whitespace-normal px-[16px] py-[12px] leading-[1.4]',
+        sm: 'h-8 whitespace-normal rounded-md px-3 text-xs leading-[1.4]',
+        lg: 'h-10 whitespace-normal rounded-md px-8 leading-[1.4]',
         icon: 'h-6 w-6',
       },
     },

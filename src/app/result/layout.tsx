@@ -1,6 +1,7 @@
 import { PageHeader } from '@/components';
 import { PageContainer } from '@/components';
-import React from 'react';
+
+export const dynamic = 'force-dynamic';
 
 const ResultLayout = ({ children }: Readonly<{ children: React.ReactNode }>) => {
   return (

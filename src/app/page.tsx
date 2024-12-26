@@ -1,5 +1,5 @@
-import { redirect } from 'next/navigation';
+import { QuestionRootRedirect } from '@/components/system';
 
 export default function Home() {
-  redirect('/question/1');
+  return <QuestionRootRedirect />;
 }

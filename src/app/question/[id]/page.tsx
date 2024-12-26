@@ -1,57 +1,20 @@
-import { OptionsList } from '@/components';
-import { Typography } from '@/components/ui/typography';
-import { cn } from '@/lib/utils';
+import config from '../../../config.json';
+import QuestionComponent from '@/components/QuestionComponent';
 
-const testData = {
-  id: 'question_9',
-  description: 'Do you agree with the statement below?',
-  sub_description: '“My partner and I make sex a priority in our relationship”',
-  dynamic_values: null,
-  info_break: null,
-  screen_type: 'single_choice_text',
-  options: [
-    {
-      description: 'Strongly agree',
-      id: 'option_21',
-      next: 'question_10',
-    },
-    {
-      description: 'Agree',
-      id: 'option_22',
-      next: 'question_10',
-    },
-    {
-      description: 'Neutral',
-      id: 'option_23',
-      next: 'question_10',
-    },
-    {
-      description: 'Disagree',
-      id: 'option_24',
-      next: 'question_10',
-    },
-    {
-      description: 'Strongly disagree',
-      id: 'option_25',
-      next: 'question_10',
-    },
-  ],
-};
+export async function generateStaticParams() {
+  const questions = config.questionnaire.questions;
 
-const SingleQuestionPage = ({}) => {
-  const { description, sub_description } = testData;
+  return questions.map((question) => ({
+    id: question.id,
+  }));
+}
 
-  const textAlign = sub_description ? 'text-center' : 'text-left';
+export const dynamicParams = false;
 
-  return (
-    <>
-      <div className={cn('flex flex-col gap-[30px]', textAlign)}>
-        <Typography>{description}</Typography>
-        {sub_description && <Typography variant="secondary">{sub_description}</Typography>}
-        <OptionsList />
-      </div>
-    </>
-  );
+const SingleQuestionPage = async ({ params }: { params: Promise<{ id: string }> }) => {
+  const { id } = await params;
+
+  return <QuestionComponent questionId={id} />;
 };
 
 export default SingleQuestionPage;

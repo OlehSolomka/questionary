@@ -1,12 +1,12 @@
 import { SCREEN_TYPES } from './constants';
 
 export type Config = {
-  questionaree: Questionnaire;
+  questionnaire: Questionnaire;
   theme: Theme;
 };
 
 export type Theme = {
-  backgroundColour: string;
+  variables: Record<string, string>;
 };
 
 export type Questionnaire = {
@@ -19,7 +19,8 @@ export type Question = {
   id: string;
   root: boolean;
   description: string;
-  sub_description: string | null;
+  description_short: string;
+  helper_text: string | null;
   dynamic_values: Record<string, DynamicValue> | null;
   info_break: InfoBreakData | null;
   screen_type: ScreenType;
@@ -29,7 +30,7 @@ export type Question = {
 export type DynamicValue = {
   question_id: string;
   match_option: boolean;
-  insert_value?: Record<string, string>;
+  insert_value: Record<string, string> & { default: string };
 };
 
 export type Option = {
@@ -40,6 +41,7 @@ export type Option = {
 
 export type OptionElementProps = {
   option: Option;
+  onOptionClick: (option: Option) => void;
 };
 
 export type InfoBreakData = {
@@ -47,6 +49,13 @@ export type InfoBreakData = {
   description: string;
 };
 
-export type UserResult = Record<Question['id'], Option>;
+export type UserAnswer = {
+  question: Question;
+  answer: Option;
+};
+
+export type UserResult = Record<Question['id'], UserAnswer>;
+
+export type OutputResultData = { description_short: string; answer_description: string };
 
 export type ScreenType = (typeof SCREEN_TYPES)[keyof typeof SCREEN_TYPES];

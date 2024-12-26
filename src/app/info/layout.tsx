@@ -1,12 +1,13 @@
 import { PageHeader } from '@/components';
 import { PageContainer } from '@/components';
-import React from 'react';
+
+export const dynamic = 'force-dynamic';
 
 const InfoLayout = ({ children }: Readonly<{ children: React.ReactNode }>) => {
   return (
-    <div className="h-screen bg-gradient-primary">
+    <div className="min-h-screen bg-gradient-primary">
       <PageHeader variant="info" />
-      <PageContainer className="mt-4 text-center">{children}</PageContainer>
+      <PageContainer className="mt-4 pb-8 text-center">{children}</PageContainer>
     </div>
   );
 };
